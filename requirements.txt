@@ -1,0 +1,5 @@
+# Install CUDA PyTorch FIRST using tools/setup.ps1; these are the lab's pins.
+websocket-client>=1.0
+pillow>=10
+ultralytics==8.4.208
+PyYAML>=6.0

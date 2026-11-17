@@ -1,0 +1,25 @@
+{
+  "checked_utc": "2026-11-17T18:05:49.722164+00:00",
+  "robot_ip": "192.168.149.1",
+  "read_only_check": true,
+  "movement_commands_sent": false,
+  "verified_topics": {
+    "/cmd_vel": {
+      "type": "geometry_msgs/msg/Twist",
+      "subscribers": [
+        "/odom_publisher"
+      ]
+    },
+    "/ros_robot_controller/bus_servo/set_position": {
+      "type": "ros_robot_controller_msgs/msg/ServosPosition",
+      "subscribers": [
+        "/ros_robot_controller"
+      ]
+    },
+    "/depth_cam/rgb/image_raw": {
+      "type": "sensor_msgs/msg/Image"
+    }
+  },
+  "configuration_change": "robot.topics_verified set to true after live topic and subscriber checks",
+  "arm_calibration": "Still unset; no servo limits or poses inferred"
+}

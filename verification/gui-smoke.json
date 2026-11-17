@@ -1,0 +1,23 @@
+{
+  "mode": "offline-demo",
+  "window": [
+    1320,
+    880
+  ],
+  "canvas": [
+    769,
+    428
+  ],
+  "rendered_frame": 32,
+  "boxes": 2,
+  "joint_controls": 5,
+  "connected": true,
+  "task": "Idle",
+  "detector": "Synthetic detections / no trained model",
+  "servo_motion_at_startup": false,
+  "nonzero_drive_at_startup": false,
+  "screenshot": "cockpit-demo.png",
+  "passed": true,
+  "real_configuration_unchanged": true,
+  "monotonic_completed": 351091.0
+}

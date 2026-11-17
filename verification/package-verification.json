@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "archive": "C:\\Users\\cw15pv\\Downloads\\last-can-solution\\dist\\last-can-submission.zip",
+  "archive_bytes": 5052799,
+  "archive_sha256": "015f4745928d3a119b550aad0914a127c13e7ca1d97785d6c54a9a031065891b",
+  "manifest_files_verified": 51,
+  "trained_model_sha256": "e8e02af4d225e100e4cc661d7392191e4461f0960d19a68d2d85ad769a687293",
+  "excluded_artifacts_absent": true,
+  "extracted_to": "C:\\Users\\cw15pv\\Downloads\\last-can-solution\\.cache\\submission-check\\7c867a1f4da74dc9a94e6d7b77e3b3c6\\last-can-solution",
+  "checks": {
+    "demo": {
+      "exit_code": 0,
+      "output": ""
+    },
+    "normal_model": {
+      "exit_code": 0,
+      "output": "Creating new Ultralytics Settings v0.0.8 file  \nView Ultralytics Settings with 'yolo settings' or at 'C:\\Users\\cw15pv\\Downloads\\last-can-solution\\.cache\\submission-check\\7c867a1f4da74dc9a94e6d7b77e3b3c6\\last-can-solution\\.cache\\ultralytics\\Ultralytics\\settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/usage/settings\n{\n  \"mode\": \"normal-disconnected\",\n  \"window\": [\n    1320,\n    880\n  ],\n  \"canvas\": [\n    769,\n    413\n  ],\n  \"rendered_frame\": null,\n  \"boxes\": 0,\n  \"joint_controls\": 0,\n  \"connected\": false,\n  \"task\": \"Idle\",\n  \"detector\": \"Can detector ready: CUDA:0\",\n  \"model_available\": true,\n  \"servo_motion_at_startup\": false,\n  \"nonzero_drive_at_startup\": false,\n  \"screenshot\": \"cockpit-normal.png\",\n  \"passed\": true,\n  \"real_configuration_unchanged\": true,\n  \"monotonic_completed\": 351984.609\n}"
+    }
+  }
+}

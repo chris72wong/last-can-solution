@@ -1,0 +1,60 @@
+{
+  "robot": {
+    "ip": "192.168.149.1",
+    "rosbridge_port": 9090,
+    "video_port": 8080,
+    "camera_topic": "/depth_cam/rgb/image_raw",
+    "cmd_vel_topic": "/cmd_vel",
+    "cmd_vel_type": "geometry_msgs/msg/Twist",
+    "servo_topic": "/ros_robot_controller/bus_servo/set_position",
+    "servo_type": "ros_robot_controller_msgs/msg/ServosPosition",
+    "topics_verified": true
+  },
+  "motion": {
+    "linear_speed": 0.12,
+    "angular_speed": 0.35,
+    "publish_hz": 10,
+    "manual_lease_s": 0.4
+  },
+  "vision": {
+    "model": "models/best.pt",
+    "confidence": 0.25,
+    "imgsz": 640,
+    "max_frame_age_s": 1.0
+  },
+  "servos": [],
+  "poses": {},
+  "sequences": {
+    "grab": [
+      "home",
+      "open",
+      "reach",
+      "grip",
+      "lift",
+      "carry"
+    ],
+    "drop": [
+      "release_horizontal",
+      "open",
+      "home"
+    ]
+  },
+  "alignment": {
+    "calibrated": false,
+    "target_x": null,
+    "target_height": null,
+    "x_tolerance": null,
+    "height_tolerance": null,
+    "turn_sign": null,
+    "forward_sign": null,
+    "turn_speed": 0.18,
+    "forward_speed": 0.05,
+    "pulse_s": 0.12,
+    "settle_s": 0.25,
+    "timeout_s": 25.0,
+    "target_loss_s": 1.0,
+    "max_frame_age_s": 1.0,
+    "tracking_gate": 0.2,
+    "stable_frames": 3
+  }
+}

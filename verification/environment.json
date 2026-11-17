@@ -1,0 +1,19 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "C:\\Users\\cw15pv\\Downloads\\last-can-solution\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "ultralytics": "8.4.208",
+    "pillow": "13.0.0",
+    "websocket-client": "1.9.2",
+    "numpy": "2.5.4"
+  },
+  "cuda_available": true,
+  "torch_cuda": "12.8",
+  "gpu": "NVIDIA RTX 2000 Ada Generation",
+  "gpu_memory_bytes": 17175150592,
+  "pip_check": "No broken requirements found",
+  "dataset_archive_sha1": "f41af221b8b6357e02025ca387af1baa1e771b32"
+}

@@ -1,0 +1,68 @@
+{
+  "model": "models/best.pt",
+  "model_sha256": "e8e02af4d225e100e4cc661d7392191e4461f0960d19a68d2d85ad769a687293",
+  "available": true,
+  "load_status": "Can detector ready: CUDA:0",
+  "device": 0,
+  "color_source": "PIL RGB -> contiguous NumPy BGR in Detector.predict",
+  "simulated": false,
+  "robot_contacted": false,
+  "frames": [
+    {
+      "image": "neg_00237.jpg",
+      "split": "held-out test",
+      "expected_positive": false,
+      "frame_id": 101,
+      "image_size": [
+        640,
+        360
+      ],
+      "rgb_source_pixel": [
+        7,
+        23,
+        13
+      ],
+      "source_frame_identity_preserved": true,
+      "box_count": 0,
+      "confidence": [],
+      "boxes": [],
+      "file_input_box_count": 0,
+      "file_input_and_rgb_interface_agree": true,
+      "frame_level_expectation_met": true,
+      "error": ""
+    },
+    {
+      "image": "rbt_00200.jpg",
+      "split": "held-out test",
+      "expected_positive": true,
+      "frame_id": 102,
+      "image_size": [
+        640,
+        360
+      ],
+      "rgb_source_pixel": [
+        201,
+        210,
+        205
+      ],
+      "source_frame_identity_preserved": true,
+      "box_count": 1,
+      "confidence": [
+        0.8602820634841919
+      ],
+      "boxes": [
+        [
+          262.381103515625,
+          64.82794189453125,
+          413.68182373046875,
+          341.1297607421875
+        ]
+      ],
+      "file_input_box_count": 1,
+      "file_input_and_rgb_interface_agree": true,
+      "frame_level_expectation_met": true,
+      "error": ""
+    }
+  ],
+  "passed": true
+}

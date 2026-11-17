@@ -1,0 +1,29 @@
+{
+  "dataset": "Instructor-provided redbull_v5, original splits preserved",
+  "dataset_archive_bytes": 358701778,
+  "dataset_archive_sha1": "f41af221b8b6357e02025ca387af1baa1e771b32",
+  "dataset_preflight": "All 2029 images have explicit labels, class 0, finite normalized coordinates; counts are in dataset-summary.json",
+  "mnist_sample": {
+    "run": "tools/runs/mnist/sample_20261117",
+    "epochs_completed": 10,
+    "training_batch_inspected": true,
+    "observations": "Handwritten digits have matching boxes; synthetic negative tiles are empty; these results are not can results",
+    "results_file": "mnist-sample-results.json"
+  },
+  "can_baseline": {
+    "run": "runs/cans/baseline_v5_20261117",
+    "training_batch_inspected": true,
+    "batch_file": "train_batch0.jpg (local run output, excluded from submission)",
+    "observations": "Class-0 boxes fit the visible target cans; mosaic includes negative robot-camera tiles and rotated target views; no incorrect class mapping was observed in the inspected batch",
+    "final_metrics_file": "training-results.json",
+    "live_robot_tested": false,
+    "epochs_completed": 80,
+    "heldout_examples_inspected": [
+      "rbt_00203.jpg",
+      "rbt_00216.jpg",
+      "neg_00249.jpg"
+    ],
+    "example_observations": "Separate boxes on upright/sideways and distant two-can views; one distant can at confidence0.30. Trouser-leg false alarm at0.80 confirms additional new negative captures may be needed.",
+    "exported_model_api_check": "model-inference-check.json"
+  }
+}

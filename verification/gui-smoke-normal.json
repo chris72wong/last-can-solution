@@ -1,0 +1,24 @@
+{
+  "mode": "normal-disconnected",
+  "window": [
+    1320,
+    880
+  ],
+  "canvas": [
+    769,
+    413
+  ],
+  "rendered_frame": null,
+  "boxes": 0,
+  "joint_controls": 0,
+  "connected": false,
+  "task": "Idle",
+  "detector": "Can detector ready: CUDA:0",
+  "model_available": true,
+  "servo_motion_at_startup": false,
+  "nonzero_drive_at_startup": false,
+  "screenshot": "cockpit-normal.png",
+  "passed": true,
+  "real_configuration_unchanged": true,
+  "monotonic_completed": 351871.968
+}

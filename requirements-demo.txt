@@ -1,0 +1,3 @@
+# Offline GUI/fake-robot mode does not need PyTorch or YOLO.
+websocket-client>=1.0
+pillow>=10

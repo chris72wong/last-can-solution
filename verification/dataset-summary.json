@@ -1,0 +1,23 @@
+{
+  "train": {
+    "images": 1684,
+    "positive_images": 1401,
+    "negative_images": 283,
+    "boxes": 1410,
+    "directory": "C:\\Users\\cw15pv\\Downloads\\last-can-solution\\data\\redbull_v5\\train\\images"
+  },
+  "val": {
+    "images": 218,
+    "positive_images": 174,
+    "negative_images": 44,
+    "boxes": 174,
+    "directory": "C:\\Users\\cw15pv\\Downloads\\last-can-solution\\data\\redbull_v5\\valid\\images"
+  },
+  "test": {
+    "images": 127,
+    "positive_images": 65,
+    "negative_images": 62,
+    "boxes": 75,
+    "directory": "C:\\Users\\cw15pv\\Downloads\\last-can-solution\\data\\redbull_v5\\test\\images"
+  }
+}

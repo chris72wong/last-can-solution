@@ -1,0 +1,977 @@
+{
+  "completed_utc": "2026-11-17T17:49:09.821212+00:00",
+  "run_name": "baseline_v5_20261117",
+  "run_directory": "C:\\Users\\cw15pv\\Downloads\\last-can-solution\\runs\\cans\\baseline_v5_20261117",
+  "base_model": "yolo11n.pt",
+  "model_file": "models/best.pt",
+  "command": "python train_cans.py --data data\\redbull_v5 --epochs 80 --patience 20 --imgsz 640 --batch 16 --workers 4 --name baseline_v5_20261117",
+  "settings": {
+    "epochs": 80,
+    "patience": 20,
+    "imgsz": 640,
+    "fliplr": 0.5,
+    "seed": 0
+  },
+  "epochs_completed": 80,
+  "effective_batch": 16,
+  "effective_workers": 4,
+  "confidence": 0.25,
+  "data_split": {
+    "train": {
+      "images": 1684,
+      "positive_images": 1401,
+      "negative_images": 283,
+      "boxes": 1410,
+      "directory": "C:\\Users\\cw15pv\\Downloads\\last-can-solution\\data\\redbull_v5\\train\\images"
+    },
+    "val": {
+      "images": 218,
+      "positive_images": 174,
+      "negative_images": 44,
+      "boxes": 174,
+      "directory": "C:\\Users\\cw15pv\\Downloads\\last-can-solution\\data\\redbull_v5\\valid\\images"
+    },
+    "test": {
+      "images": 127,
+      "positive_images": 65,
+      "negative_images": 62,
+      "boxes": 75,
+      "directory": "C:\\Users\\cw15pv\\Downloads\\last-can-solution\\data\\redbull_v5\\test\\images"
+    }
+  },
+  "metrics": {
+    "val": {
+      "mAP50": 0.9947191011235955,
+      "mAP50-95": 0.7593145217821473,
+      "precision": 0.9992586078982362,
+      "recall": 0.9827586206896551
+    },
+    "test": {
+      "mAP50": 0.9937012987012986,
+      "mAP50-95": 0.7703514967166328,
+      "precision": 0.9739971666323191,
+      "recall": 0.9988761275488736
+    }
+  },
+  "heldout_frame_counts": {
+    "positive_total": 65,
+    "positive_detected": 65,
+    "negative_total": 62,
+    "negative_false_alarm": 4
+  },
+  "extra_robot_frame_counts": {},
+  "per_image_predictions": [
+    {
+      "image": "neg_00237.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00238.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00239.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00240.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00241.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00242.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00243.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00244.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00245.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00246.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00247.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00248.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00249.jpg",
+      "positive": false,
+      "detections": 1,
+      "confidence": [
+        0.8046079874038696
+      ]
+    },
+    {
+      "image": "neg_00250.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00251.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00252.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00253.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00254.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00255.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00256.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00257.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00258.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00259.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00260.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00261.jpg",
+      "positive": false,
+      "detections": 1,
+      "confidence": [
+        0.6564074158668518
+      ]
+    },
+    {
+      "image": "neg_00262.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00263.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00264.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00266.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00267.jpg",
+      "positive": false,
+      "detections": 1,
+      "confidence": [
+        0.43467262387275696
+      ]
+    },
+    {
+      "image": "neg_00268.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00269.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00270.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00271.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00272.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00273.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00274.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00275.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00276.jpg",
+      "positive": false,
+      "detections": 1,
+      "confidence": [
+        0.29562175273895264
+      ]
+    },
+    {
+      "image": "neg_00277.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00278.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00279.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00280.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00281.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00282.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00283.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00284.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00285.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00286.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00287.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00288.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00289.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00290.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00291.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00292.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00293.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00294.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00295.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00296.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00297.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00298.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "neg_00299.jpg",
+      "positive": false,
+      "detections": 0,
+      "confidence": []
+    },
+    {
+      "image": "rbt_00200.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8602897524833679
+      ]
+    },
+    {
+      "image": "rbt_00201.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8142161965370178
+      ]
+    },
+    {
+      "image": "rbt_00202.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.9091566205024719
+      ]
+    },
+    {
+      "image": "rbt_00203.jpg",
+      "positive": true,
+      "detections": 2,
+      "confidence": [
+        0.8863202333450317,
+        0.8755698800086975
+      ]
+    },
+    {
+      "image": "rbt_00204.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8453769683837891
+      ]
+    },
+    {
+      "image": "rbt_00205.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8846383690834045
+      ]
+    },
+    {
+      "image": "rbt_00206.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8584052324295044
+      ]
+    },
+    {
+      "image": "rbt_00207.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8291139006614685
+      ]
+    },
+    {
+      "image": "rbt_00208.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8364481329917908
+      ]
+    },
+    {
+      "image": "rbt_00209.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.9000258445739746
+      ]
+    },
+    {
+      "image": "rbt_00210.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8315457701683044
+      ]
+    },
+    {
+      "image": "rbt_00211.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8969695568084717
+      ]
+    },
+    {
+      "image": "rbt_00212.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8707120418548584
+      ]
+    },
+    {
+      "image": "rbt_00213.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8624627590179443
+      ]
+    },
+    {
+      "image": "rbt_00214.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8251278400421143
+      ]
+    },
+    {
+      "image": "rbt_00215.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.771117627620697
+      ]
+    },
+    {
+      "image": "rbt_00216.jpg",
+      "positive": true,
+      "detections": 2,
+      "confidence": [
+        0.8745145201683044,
+        0.2986884117126465
+      ]
+    },
+    {
+      "image": "rbt_00217.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.885567307472229
+      ]
+    },
+    {
+      "image": "rbt_00218.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8172470927238464
+      ]
+    },
+    {
+      "image": "rbt_00219.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8289658427238464
+      ]
+    },
+    {
+      "image": "rbt_00220.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8464195132255554
+      ]
+    },
+    {
+      "image": "rbt_00221.jpg",
+      "positive": true,
+      "detections": 2,
+      "confidence": [
+        0.8597800135612488,
+        0.8484172224998474
+      ]
+    },
+    {
+      "image": "rbt_00222.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8403906226158142
+      ]
+    },
+    {
+      "image": "rbt_00223.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.9195979833602905
+      ]
+    },
+    {
+      "image": "rbt_00224.jpg",
+      "positive": true,
+      "detections": 2,
+      "confidence": [
+        0.8906031250953674,
+        0.8607653975486755
+      ]
+    },
+    {
+      "image": "rbt_00225.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8459072709083557
+      ]
+    },
+    {
+      "image": "rbt_00226.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.9220362305641174
+      ]
+    },
+    {
+      "image": "rbt_00227.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8529571294784546
+      ]
+    },
+    {
+      "image": "rbt_00228.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.831383228302002
+      ]
+    },
+    {
+      "image": "rbt_00229.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8934826254844666
+      ]
+    },
+    {
+      "image": "rbt_00230.jpg",
+      "positive": true,
+      "detections": 2,
+      "confidence": [
+        0.8669012188911438,
+        0.5024380087852478
+      ]
+    },
+    {
+      "image": "rbt_00231.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.9152622222900391
+      ]
+    },
+    {
+      "image": "rbt_00232.jpg",
+      "positive": true,
+      "detections": 2,
+      "confidence": [
+        0.8864734768867493,
+        0.8714516758918762
+      ]
+    },
+    {
+      "image": "rbt_00233.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8864336609840393
+      ]
+    },
+    {
+      "image": "rbt_00234.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8837775588035583
+      ]
+    },
+    {
+      "image": "rbt_00235.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.83852219581604
+      ]
+    },
+    {
+      "image": "rbt_00236.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8843509554862976
+      ]
+    },
+    {
+      "image": "rbt_00237.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.9160165786743164
+      ]
+    },
+    {
+      "image": "rbt_00238.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8712131977081299
+      ]
+    },
+    {
+      "image": "rbt_00239.jpg",
+      "positive": true,
+      "detections": 2,
+      "confidence": [
+        0.8899589776992798,
+        0.8864020109176636
+      ]
+    },
+    {
+      "image": "rbt_00240.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8210892081260681
+      ]
+    },
+    {
+      "image": "rbt_00241.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8799654841423035
+      ]
+    },
+    {
+      "image": "rbt_00242.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.9084064960479736
+      ]
+    },
+    {
+      "image": "rbt_00243.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8864656686782837
+      ]
+    },
+    {
+      "image": "rbt_00244.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.9039442539215088
+      ]
+    },
+    {
+      "image": "rbt_00245.jpg",
+      "positive": true,
+      "detections": 2,
+      "confidence": [
+        0.8606020212173462,
+        0.843355655670166
+      ]
+    },
+    {
+      "image": "rbt_00246.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.9002417325973511
+      ]
+    },
+    {
+      "image": "rbt_00247.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.6079494953155518
+      ]
+    },
+    {
+      "image": "rbt_00248.jpg",
+      "positive": true,
+      "detections": 2,
+      "confidence": [
+        0.8956361413002014,
+        0.8721615076065063
+      ]
+    },
+    {
+      "image": "rbt_00249.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8823873996734619
+      ]
+    },
+    {
+      "image": "rbt_00250.jpg",
+      "positive": true,
+      "detections": 2,
+      "confidence": [
+        0.8693193793296814,
+        0.8683377504348755
+      ]
+    },
+    {
+      "image": "rbt_00251.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8565382361412048
+      ]
+    },
+    {
+      "image": "rbt_00252.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8671478629112244
+      ]
+    },
+    {
+      "image": "rbt_00253.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8771486282348633
+      ]
+    },
+    {
+      "image": "rbt_00254.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8768253922462463
+      ]
+    },
+    {
+      "image": "rbt_00255.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.7310308218002319
+      ]
+    },
+    {
+      "image": "rbt_00256.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8573755025863647
+      ]
+    },
+    {
+      "image": "rbt_00257.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8684405088424683
+      ]
+    },
+    {
+      "image": "rbt_00258.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8681350946426392
+      ]
+    },
+    {
+      "image": "rbt_00259.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8666570782661438
+      ]
+    },
+    {
+      "image": "rbt_00260.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8725167512893677
+      ]
+    },
+    {
+      "image": "rbt_00261.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8733699321746826
+      ]
+    },
+    {
+      "image": "rbt_00262.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.8499879240989685
+      ]
+    },
+    {
+      "image": "rbt_00263.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.862616777420044
+      ]
+    },
+    {
+      "image": "rbt_00264.jpg",
+      "positive": true,
+      "detections": 1,
+      "confidence": [
+        0.9121106863021851
+      ]
+    }
+  ],
+  "live_robot_tested": false,
+  "dataset_name": "redbull_v5"
+}

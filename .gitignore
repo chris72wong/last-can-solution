@@ -1,0 +1,14 @@
+.venv/
+.cache/
+__pycache__/
+*.py[cod]
+data/
+runs/
+captures/
+dist/
+tests/.gui-test-*/
+/yolo11n.pt
+verification/*.log
+.env
+.env.*
+!.env.example
