@@ -67,6 +67,13 @@ software build. All work runs on the lab PC; install nothing on the robot.
    old servo/pose/alignment verification so it cannot be reused on another robot.
    Disconnect or Stop clears previous movement. Reconnection requires release
    of the controls; old movement is not resumed.
+
+   If the camera reports **Camera stream ended**, check the RGB feed directly at
+   `http://192.168.149.1:8080/stream?topic=/depth_cam/rgb/image_raw&type=mjpeg`
+   (substitute your verified robot IP/topic). The rover's video server requires
+   literal `/` characters in the topic; `%2F` can produce an empty stream. The
+   application preserves these slashes and connects directly without a PC HTTP
+   proxy. Restart the application after updating the camera code.
 3. **Calibrate > Servos:** enter each verified bus ID, joint name, and measured
    safe range. Every registered joint gets an Operate control. Choose a target
    and click **Send**; creating widgets and moving the target slider alone do

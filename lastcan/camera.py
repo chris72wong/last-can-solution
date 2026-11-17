@@ -50,6 +50,8 @@ class MjpegCamera:
         self._thread = None
         self._response = None
         self._frame_id = 0
+        # The rover is reached over local Wi-Fi, independently of any PC proxy.
+        self._opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 
     def start(self) -> None:
         if self._thread and self._thread.is_alive():
@@ -74,10 +76,11 @@ class MjpegCamera:
         while not self._stop.is_set():
             robot = self.config["robot"].copy()
             url = (f"http://{robot['ip']}:{int(robot['video_port'])}/stream?" +
-                   urllib.parse.urlencode({"topic": robot["camera_topic"], "type": "mjpeg", "quality": 70}))
+                   # This rover's web_video_server does not decode %2F in topics.
+                   urllib.parse.urlencode({"topic": robot["camera_topic"], "type": "mjpeg", "quality": 70}, safe="/"))
             try:
                 self.status = "Connecting camera..."
-                with urllib.request.urlopen(url, timeout=3.0) as response:
+                with self._opener.open(url, timeout=3.0) as response:
                     self._response = response
                     parser = JpegBuffer()
                     while not self._stop.is_set():

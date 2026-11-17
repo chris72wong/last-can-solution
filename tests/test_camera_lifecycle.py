@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import copy
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import io
+import os
 from pathlib import Path
 import socket
 import threading
@@ -46,6 +48,52 @@ class MockStream:
 
 
 class CameraLifecycleTests(unittest.TestCase):
+    def test_rover_topic_keeps_slashes_and_stream_bypasses_system_proxy(self):
+        payload = jpeg("green")
+        requests = []
+
+        class RoverVideoServer(BaseHTTPRequestHandler):
+            def do_GET(self):
+                requests.append(self.path)
+                # Reproduce the rover: an escaped topic returns no frames.
+                body = payload if "topic=/depth_cam/rgb/image_raw&" in self.path else b""
+                self.send_response(200)
+                self.send_header("Content-Type", "multipart/x-mixed-replace; boundary=frame")
+                self.end_headers()
+                self.wfile.write(body)
+
+            def log_message(self, *args):
+                pass
+
+        server = ThreadingHTTPServer(("127.0.0.1", 0), RoverVideoServer)
+        worker = threading.Thread(target=server.serve_forever, daemon=True)
+        config = copy.deepcopy(DEFAULT_CONFIG)
+        config["robot"].update(ip="127.0.0.1", video_port=server.server_port)
+        frames = []
+        received = threading.Event()
+
+        def on_frame(frame):
+            frames.append(frame)
+            received.set()
+
+        camera = None
+        worker.start()
+        try:
+            with patch.dict(os.environ, {"http_proxy": "http://127.0.0.1:1",
+                                         "HTTP_PROXY": "http://127.0.0.1:1",
+                                         "no_proxy": "", "NO_PROXY": ""}):
+                camera = MjpegCamera(config, on_frame)
+                camera.start()
+                self.assertTrue(received.wait(2), camera.status)
+                self.assertEqual(frames[0].image.size, (16, 16))
+                self.assertIn("topic=/depth_cam/rgb/image_raw&", requests[0])
+        finally:
+            if camera:
+                camera.stop()
+            server.shutdown()
+            server.server_close()
+            worker.join(1)
+
     def test_old_inflight_connection_cannot_revive_after_robot_address_changes(self):
         config = copy.deepcopy(DEFAULT_CONFIG)
         config["robot"]["ip"] = "old-robot"
@@ -62,7 +110,7 @@ class CameraLifecycleTests(unittest.TestCase):
             return new_stream
 
         camera = MjpegCamera(config, frames.append)
-        with patch("lastcan.camera.urllib.request.urlopen", urlopen):
+        with patch.object(camera._opener, "open", urlopen):
             try:
                 camera.start()
                 self.assertTrue(request_started.wait(1))
@@ -234,7 +282,7 @@ class InferenceSessionTests(unittest.TestCase):
 
         stream = DelayedStream(jpeg("red"))
         camera = MjpegCamera(config, frames.append)
-        with patch("lastcan.camera.urllib.request.urlopen", return_value=stream):
+        with patch.object(camera._opener, "open", return_value=stream):
             try:
                 camera.start()
                 self.assertTrue(reading.wait(1))
