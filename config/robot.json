@@ -18,11 +18,54 @@
   },
   "vision": {
     "model": "models/best.pt",
-    "confidence": 0.25,
+    "confidence": 0.5665369649805447,
     "imgsz": 640,
     "max_frame_age_s": 1.0
   },
-  "servos": [],
+  "servos": [
+    {
+      "id": 1,
+      "name": "Main Joint",
+      "min": 0,
+      "max": 1000,
+      "verified": true
+    },
+    {
+      "id": 2,
+      "name": "Main Arm",
+      "min": 0,
+      "max": 1000,
+      "verified": true
+    },
+    {
+      "id": 3,
+      "name": "Forearm",
+      "min": 0,
+      "max": 1000,
+      "verified": true
+    },
+    {
+      "id": 4,
+      "name": "Wrist",
+      "min": 0,
+      "max": 1000,
+      "verified": true
+    },
+    {
+      "id": 5,
+      "name": "Twist Grabber",
+      "min": 0,
+      "max": 1000,
+      "verified": true
+    },
+    {
+      "id": 10,
+      "name": "Grabber",
+      "min": 0,
+      "max": 1000,
+      "verified": true
+    }
+  ],
   "poses": {},
   "sequences": {
     "grab": [

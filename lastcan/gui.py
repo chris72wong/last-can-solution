@@ -320,15 +320,18 @@ class Cockpit:
         buttons.grid(row=5, column=0, columnspan=2, sticky="ew", pady=(3, 10))
         ttk.Button(buttons, text="Add / update joint", command=self._save_servo).pack(side="left", fill="x", expand=True)
         ttk.Button(buttons, text="Remove ID", command=self._remove_servo).pack(side="left", padx=(7, 0))
+        self.servo_status = self._label(parent, "Fill in all four fields, then click Add / update joint.",
+                                        muted=True, wraplength=375, font=("Segoe UI", 9))
+        self.servo_status.grid(row=6, column=0, columnspan=2, sticky="w", pady=(0, 10))
         self.servo_tree = ttk.Treeview(parent, columns=("id", "name", "range", "verified"), show="headings", height=5)
         for key, label, width in (("id", "ID", 35), ("name", "Joint", 110), ("range", "Range", 90), ("verified", "Checked", 65)):
             self.servo_tree.heading(key, text=label)
             self.servo_tree.column(key, width=width, stretch=key == "name")
-        self.servo_tree.grid(row=6, column=0, columnspan=2, sticky="nsew")
+        self.servo_tree.grid(row=7, column=0, columnspan=2, sticky="nsew")
         self.servo_tree.bind("<<TreeviewSelect>>", self._select_servo)
         self._label(parent, "Register only IDs you have identified. Editing joints invalidates saved pose/alignment checks. "
                     "Sliders stage a target; Send explicitly commands it.", muted=True, wraplength=375,
-                    font=("Segoe UI", 9)).grid(row=7, column=0, columnspan=2, sticky="w", pady=12)
+                    font=("Segoe UI", 9)).grid(row=8, column=0, columnspan=2, sticky="w", pady=12)
 
     def _build_pose_settings(self, parent: ttk.Frame) -> None:
         self._label(parent, "Pose name", muted=True).grid(row=0, column=0, sticky="w", pady=5)
@@ -546,11 +549,21 @@ class Cockpit:
             pose["verified"] = False
 
     def _save_servo(self) -> None:
-        def action() -> None:
+        def action() -> bool:
             servo = {key: variable.get().strip() for key, variable in self.servo_fields.items()}
-            servo.update({key: int(servo[key]) for key in ("id", "min", "max")})
-            if not servo["name"] or not 1 <= servo["id"] <= 253 or not 0 <= servo["min"] < servo["max"] <= 1000:
-                raise ValueError("Provide a joint name, ID 1–253, and 0 ≤ minimum < maximum ≤ 1000.")
+            for key, label in (("id", "Servo ID"), ("name", "Joint name"),
+                               ("min", "Verified minimum"), ("max", "Verified maximum")):
+                if not servo[key]:
+                    raise ValueError(f"Fill in {label} before adding the joint.")
+                if key != "name":
+                    try:
+                        servo[key] = int(servo[key])
+                    except ValueError:
+                        raise ValueError(f"{label} must be a whole number, without units or a range.") from None
+            if not 1 <= servo["id"] <= 253:
+                raise ValueError("Servo ID must be a whole number from 1 to 253.")
+            if not 0 <= servo["min"] < servo["max"] <= 1000:
+                raise ValueError("Minimum must be smaller than maximum; both must be within 0–1000. Use your measured safe limits.")
             servo["verified"] = self.servo_verified.get()
             def edit(data: dict) -> None:
                 data["servos"] = [item for item in data["servos"] if int(item["id"]) != servo["id"]] + [servo]
@@ -558,7 +571,15 @@ class Cockpit:
                 self._invalidate_calibration(data)
             self._edit_config(edit)
             self._servo_signature = ""
-        self._call(action)
+            self._rebuild_servos()
+            note = ("Open Operate → ARM JOINTS to choose a target and click Send."
+                    if servo["verified"] else "Saved as unverified; Send stays disabled until the ID and safe range are verified.")
+            self.servo_status.configure(text=f"Saved {servo['name']} (ID {servo['id']}). {note}" +
+                                        (" Demo only; not saved to the robot configuration." if self.runtime.demo else ""),
+                                        foreground=GREEN)
+            return True
+        if not self._call(action):
+            self.servo_status.configure(text=self._last_message, foreground=RED)
 
     def _remove_servo(self) -> None:
         def action() -> None:
